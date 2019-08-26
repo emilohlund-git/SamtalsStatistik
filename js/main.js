@@ -13,17 +13,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-db.collection("cities").add({
-    name: "Tokyo",
-    country: "Japan"
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
-
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
@@ -121,7 +110,19 @@ function createTableRow(kategori) {
 		tabell.rows[currentRow].classList.add("table-primary");
 	} else {
 		tabell.rows[currentRow].classList.add("table-default");
-	}	
+	}
+	
+	db.collection("samtal").add({
+    		kategori: kategori,
+    		samtalslängd: samtalsLangd.value,
+		övrigt: document.getElementById("distraktion-text").value;
+	})
+	.then(function(docRef) {
+    		console.log("Document written with ID: ", docRef.id);
+	})
+	.catch(function(error) {
+    		console.error("Error adding document: ", error);
+	});
 }
 
 function toggleRows(text) {

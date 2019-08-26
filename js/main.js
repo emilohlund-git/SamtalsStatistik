@@ -41,9 +41,9 @@ let kategorier = [
 let raknare = [
 	bsid,
 	mbid,
-	övfr,
+	ovfr,
 	btln,
-	övrt,
+	ovrt,
 	shml,
 	kort,
 ];

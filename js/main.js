@@ -70,7 +70,7 @@ for (let i = 0; i < kategorier.length; i++) {
 	document.getElementById("statistik" + i).appendChild(kategoriText);
 
 	var kategoriBadge = document.createElement("span");
-	kategoriBadge.id = räknareText[i];
+	kategoriBadge.id = raknareText[i];
 	var badgeText = document.createTextNode("0");
 	kategoriBadge.appendChild(badgeText);
 	kategoriText.appendChild(kategoriBadge);
@@ -105,10 +105,10 @@ function createTableRow(kategori) {
 	currentRow++;
 	var row = tabell.insertRow(currentRow);
 	var cell_kategori = row.insertCell(0);
-	var cell_samtalslängd = row.insertCell(1);
+	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
 	cell_kategori.innerHTML = kategori;
-	cell_samtalslängd.innerHTML = samtalsLangd.value + " min";
+	cell_samtalslangd.innerHTML = samtalsLangd.value + " min";
 	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
 
 	if (currentRow % 2 == 0) {

@@ -130,10 +130,10 @@ function toggleRows(text) {
 document.addEventListener('DOMContentLoaded', function(){ 
     db.collection("samtal").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-	for (let j = 0; j < kategorier.length; j++) {
-		if (kategorier[j] == doc.data().kategori.value) {
-			raknare[j]++;
-			document.getElementById(raknareText[j]).innerHTML = raknare[j];
+	for(let i = 0; i < kategorier.length; i++) {
+		if (doc.data().value == kategorier[i]) {
+			raknare[i]++;
+			document.getElementById(raknareText[i]).innerHTML = raknare[i];
 		}
 	}
         // doc.data() is never undefined for query doc snapshots

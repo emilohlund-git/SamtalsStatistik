@@ -129,8 +129,8 @@ function toggleRows(text) {
 
 document.addEventListener('DOMContentLoaded', function(){ 
     db.collection("samtal").get().then(function(querySnapshot) {
-    currentRow++;
     querySnapshot.forEach(function(doc) {
+	currentRow++;
 	for(let i = 0; i < kategorier.length; i++) {
 		if (doc.data().kategori == kategorier[i]) {
 			raknare[i]++;

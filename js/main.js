@@ -85,7 +85,6 @@ for (let i = 0; i < kategorier.length; i++) {
 	});
 }
 
-
 laggTillSamtal.addEventListener('click', function() {
 	for(let i = 0; i < kategorier.length; i++) {
 		if (selectMenu.options[selectMenu.selectedIndex].value == kategorier[i]) {
@@ -130,22 +129,21 @@ function toggleRows(text) {
 }
 
 db.collection("samtal").get().then(function(querySnapshot) {
-	var loadedRow = 0;
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
-	var row = tabell.insertRow(loadedRow);
+	var row = tabell.insertRow(currentRow);
 	var cell_kategori = row.insertCell(0);
 	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
 	cell_kategori.innerHTML = doc.data().kategori;
 	cell_samtalslangd.innerHTML = doc.data().samtalslängd;
 	cell_distraktion.innerHTML = doc.data().övrigt;
-	if (loadedRow % 2 == 0) {
-		tabell.rows[loadedRow].classList.add("table-primary");
+	if (currentRow % 2 == 0) {
+		tabell.rows[currentRow].classList.add("table-primary");
 	} else {
-		tabell.rows[loadedRow].classList.add("table-default");
+		tabell.rows[currentRow].classList.add("table-default");
 	}
-	loadedRow++;
+	currentRow++;
         console.log(doc.id, " => ", doc.data());
     });
 });

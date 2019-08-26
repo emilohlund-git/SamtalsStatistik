@@ -17,19 +17,19 @@ db.collection("samtal").get().then(function(querySnapshot) {
 	var loadedRow = 0;
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
-	var row = tabell.insertRow(currentRow);
+	var row = tabell.insertRow(loadedRow);
 	var cell_kategori = row.insertCell(0);
 	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
-	cell_kategori.innerHTML = kategori;
-	cell_samtalslangd.innerHTML = samtalsLangd.value + " min";
-	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
-	loadedRow++;
-	if (currentRow % 2 == 0) {
-		tabell.rows[currentRow].classList.add("table-primary");
+	cell_kategori.innerHTML = "1";
+	cell_samtalslangd.innerHTML = "2";
+	cell_distraktion.innerHTML = "3";
+	if (loadedRow % 2 == 0) {
+		tabell.rows[loadedRow].classList.add("table-primary");
 	} else {
-		tabell.rows[currentRow].classList.add("table-default");
+		tabell.rows[loadedRow].classList.add("table-default");
 	}
+	loadedRow++;
         console.log(doc.id, " => ", doc.data());
     });
 });

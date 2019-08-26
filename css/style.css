@@ -1,3 +1,7 @@
+* {
+	font-family: sans-serif;
+}
+
 .input-group {
 	padding: 25px 0 25px 0;
 }
@@ -10,7 +14,7 @@ span {
 	margin-left: 10px;
 }
 
-#samtals-hj‰lp {
+#samtals-hj√§lp {
 	padding-left: 10px;
 }
 

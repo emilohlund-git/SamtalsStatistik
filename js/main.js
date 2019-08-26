@@ -105,7 +105,7 @@ function createTableRow(kategori) {
 	currentRow++;
 	var row = tabell.insertRow(currentRow);
 	var cell_kategori = row.insertCell(0);
-	var cell_samtalslängd = row.insertCell(1);
+	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
 	cell_kategori.innerHTML = kategori;
 	cell_samtalslängd.innerHTML = samtalsLangd.value + " min";

@@ -13,27 +13,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-db.collection("samtal").get().then(function(querySnapshot) {
-	var loadedRow = 0;
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-	var row = tabell.insertRow(loadedRow);
-	var cell_kategori = row.insertCell(0);
-	var cell_samtalslangd = row.insertCell(1);
-	var cell_distraktion = row.insertCell(2);
-	cell_kategori.innerHTML = doc.data();
-	cell_samtalslangd.innerHTML = doc.data();
-	cell_distraktion.innerHTML = doc.data();
-	if (loadedRow % 2 == 0) {
-		tabell.rows[loadedRow].classList.add("table-primary");
-	} else {
-		tabell.rows[loadedRow].classList.add("table-default");
-	}
-	loadedRow++;
-        console.log(doc.id, " => ", doc.data());
-    });
-});
-
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
@@ -149,5 +128,26 @@ function createTableRow(kategori) {
 function toggleRows(text) {
 
 }
+
+db.collection("samtal").get().then(function(querySnapshot) {
+	var loadedRow = 0;
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+	var row = tabell.insertRow(loadedRow);
+	var cell_kategori = row.insertCell(0);
+	var cell_samtalslangd = row.insertCell(1);
+	var cell_distraktion = row.insertCell(2);
+	cell_kategori.innerHTML = doc.data();
+	cell_samtalslangd.innerHTML = doc.data();
+	cell_distraktion.innerHTML = doc.data();
+	if (loadedRow % 2 == 0) {
+		tabell.rows[loadedRow].classList.add("table-primary");
+	} else {
+		tabell.rows[loadedRow].classList.add("table-default");
+	}
+	loadedRow++;
+        console.log(doc.id, " => ", doc.data());
+    });
+});
 
 

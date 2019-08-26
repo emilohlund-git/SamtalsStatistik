@@ -136,7 +136,7 @@ function createTableRow(kategori) {
 	db.collection("samtal").add({
     		kategori: kategori,
     		samtalslängd: samtalsLangd.value,
-		övrigt: document.getElementById("distraktion-text").value;
+		övrigt: document.getElementById("distraktion-text").value
 	})
 	.then(function(docRef) {
     		console.log("Document written with ID: ", docRef.id);

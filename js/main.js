@@ -17,7 +17,7 @@ const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
 const samtalsLangd = document.getElementById("samtals-langd");
-const bsidRaknare = document.getElementById("bsidRaknare");
+const = document.getElementById("bsidRaknare");
 
 var currentRow = 0;
 var bsid = 0;
@@ -131,6 +131,12 @@ function toggleRows(text) {
 document.addEventListener('DOMContentLoaded', function(){ 
     db.collection("samtal").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
+	for (let j = 0; j < kategorier.length; j++) {
+		if (kategorier[j] == doc.kategori) {
+			raknare[j]++;
+			document.getElementById(raknareText[i]).innerHTML = raknare[i];
+		}
+	}
         // doc.data() is never undefined for query doc snapshots
 	var row = tabell.insertRow(currentRow);
 	var cell_kategori = row.insertCell(0);

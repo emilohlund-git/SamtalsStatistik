@@ -15,45 +15,45 @@ var db = firebase.firestore();
 
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
-const läggTillSamtal = document.getElementById("lägg-till-samtal");
-const samtalsLängd = document.getElementById("samtals-längd");
-const bsidRäknare = document.getElementById("bsidRäknare");
+const laggTillSamtal = document.getElementById("lagg-till-samtal");
+const samtalsLangd = document.getElementById("samtals-langd");
+const bsidRaknare = document.getElementById("bsidRaknare");
 
 var currentRow = 0;
 var bsid = 0;
 var mbid = 0;
-var övfr = 0;
+var ovfr = 0;
 var btln = 0;
-var övrt = 0;
+var ovrt = 0;
 var shml = 0;
 var kort = 0;
 
 let kategorier = [
-	"BankID på Fil",
+	"BankID pÃ¥ Fil",
 	"Mobilt BankID",
-	"Överföring",
+	"Overforing",
 	"Betalning",
-	"Säkerhetsmeddelande",
+	"Sakerhetsmeddelande",
 	"Kort",
-	"Övrigt",
+	"Ovrigt",
 ];
 
-let räknare = [
+let raknare = [
 	bsid,
 	mbid,
-	övfr,
+	Ã¶vfr,
 	btln,
-	övrt,
+	Ã¶vrt,
 	shml,
 	kort,
 ];
 
-let räknareText = [
+let raknareText = [
 	"bsid",
 	"mbid",
-	"övfr",
+	"ovfr",
 	"btln",
-	"övrt",
+	"ovrt",
 	"shml",
 	"kort",
 ];
@@ -70,27 +70,27 @@ for (let i = 0; i < kategorier.length; i++) {
 	document.getElementById("statistik" + i).appendChild(kategoriText);
 
 	var kategoriBadge = document.createElement("span");
-	kategoriBadge.id = räknareText[i];
+	kategoriBadge.id = rÃ¤knareText[i];
 	var badgeText = document.createTextNode("0");
 	kategoriBadge.appendChild(badgeText);
 	kategoriText.appendChild(kategoriBadge);
 
 	document.getElementById("kategori" + i).classList.add("lead");
-	document.getElementById(räknareText[i]).classList.add("badge");
-	document.getElementById(räknareText[i]).classList.add("badge-pill");
-	document.getElementById(räknareText[i]).classList.add("badge-primary");
-	document.getElementById(räknareText[i]).style.cursor = "pointer";
-	document.getElementById(räknareText[i]).addEventListener('click', function() {
+	document.getElementById(raknareText[i]).classList.add("badge");
+	document.getElementById(raknareText[i]).classList.add("badge-pill");
+	document.getElementById(raknareText[i]).classList.add("badge-primary");
+	document.getElementById(raknareText[i]).style.cursor = "pointer";
+	document.getElementById(raknareText[i]).addEventListener('click', function() {
 		toggleRows(kategorier[i]);	
 	});
 }
 
 
-läggTillSamtal.addEventListener('click', function() {
+laggTillSamtal.addEventListener('click', function() {
 	for(let i = 0; i < kategorier.length; i++) {
 		if (selectMenu.options[selectMenu.selectedIndex].value == kategorier[i]) {
-			räknare[i]++;
-			document.getElementById(räknareText[i]).innerHTML = räknare[i];
+			raknare[i]++;
+			document.getElementById(raknareText[i]).innerHTML = raknare[i];
 		}
 	}
 	createTableRow(selectMenu.options[selectMenu.selectedIndex].value)
@@ -105,10 +105,10 @@ function createTableRow(kategori) {
 	currentRow++;
 	var row = tabell.insertRow(currentRow);
 	var cell_kategori = row.insertCell(0);
-	var cell_samtalslängd = row.insertCell(1);
+	var cell_samtalslÃ¤ngd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
 	cell_kategori.innerHTML = kategori;
-	cell_samtalslängd.innerHTML = samtalsLängd.value + " min";
+	cell_samtalslÃ¤ngd.innerHTML = samtalsLangd.value + " min";
 	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
 
 	if (currentRow % 2 == 0) {

@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function(){
     db.collection("samtal").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
 	for (let j = 0; j < kategorier.length; j++) {
-		if (kategorier[j] == doc.data().kategori) {
+		if (kategorier[j] == doc.data().kategori.value) {
 			raknare[j]++;
 			document.getElementById(raknareText[j]).innerHTML = raknare[i];
 		}

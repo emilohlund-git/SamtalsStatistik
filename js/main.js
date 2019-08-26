@@ -93,12 +93,11 @@ laggTillSamtal.addEventListener('click', function() {
 			document.getElementById(raknareText[i]).innerHTML = raknare[i];
 		}
 	}
-	createTableRow(selectMenu.options[selectMenu.selectedIndex].value)
-	db.collection("cities").doc("LA").set({
-    		name: "Los Angeles",
-    		state: "CA",
-    		country: "USA"
-	});
+	createTableRow(selectMenu.options[selectMenu.selectedIndex].value);
+	db.collection("Samtal").add({
+    		name: "Tokyo",
+    		country: "Japan"
+	})
 });
 
 function createTableRow(kategori) {

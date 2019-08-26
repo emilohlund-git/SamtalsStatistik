@@ -13,6 +13,27 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+db.collection("samtal").get().then(function(querySnapshot) {
+	var loadedRow = 0;
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+	var row = tabell.insertRow(currentRow);
+	var cell_kategori = row.insertCell(0);
+	var cell_samtalslangd = row.insertCell(1);
+	var cell_distraktion = row.insertCell(2);
+	cell_kategori.innerHTML = kategori;
+	cell_samtalslangd.innerHTML = samtalsLangd.value + " min";
+	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
+	loadedRow++;
+	if (currentRow % 2 == 0) {
+		tabell.rows[currentRow].classList.add("table-primary");
+	} else {
+		tabell.rows[currentRow].classList.add("table-default");
+	}
+        console.log(doc.id, " => ", doc.data());
+    });
+});
+
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");

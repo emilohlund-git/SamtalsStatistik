@@ -125,7 +125,7 @@ function createTableRow(kategori) {
 	var cell_distraktion = row.insertCell(2);
 	cell_kategori.innerHTML = kategori;
 	cell_samtalslangd.innerHTML = samtalsLangd.value + " min";
-	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
+	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value
 
 	if (currentRow % 2 == 0) {
 		tabell.rows[currentRow].classList.add("table-primary");

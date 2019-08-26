@@ -13,6 +13,12 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+	db.collection("cities").doc("LA").set({
+    		name: "Los Angeles",
+    		state: "CA",
+    		country: "USA"
+	});
+
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
@@ -94,11 +100,6 @@ laggTillSamtal.addEventListener('click', function() {
 		}
 	}
 	createTableRow(selectMenu.options[selectMenu.selectedIndex].value)
-	db.collection("cities").doc("LA").set({
-    		name: "Los Angeles",
-    		state: "CA",
-    		country: "USA"
-	});
 });
 
 function createTableRow(kategori) {

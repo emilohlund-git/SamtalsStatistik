@@ -13,11 +13,16 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-	db.collection("cities").doc("LA").set({
-    		name: "Los Angeles",
-    		state: "CA",
-    		country: "USA"
-	});
+db.collection("cities").add({
+    name: "Tokyo",
+    country: "Japan"
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
 
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");

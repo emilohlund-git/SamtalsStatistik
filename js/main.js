@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	for (let j = 0; j < kategorier.length; j++) {
 		if (kategorier[j] == doc.data().kategori.value) {
 			raknare[j]++;
-			document.getElementById(raknareText[j]).innerHTML = raknare[i];
+			document.getElementById(raknareText[j]).innerHTML = raknare[j];
 		}
 	}
         // doc.data() is never undefined for query doc snapshots

@@ -128,7 +128,8 @@ function toggleRows(text) {
 
 }
 
-db.collection("samtal").get().then(function(querySnapshot) {
+document.addEventListener('DOMContentLoaded', function(){ 
+    db.collection("samtal").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
 	var row = tabell.insertRow(currentRow);
@@ -147,5 +148,8 @@ db.collection("samtal").get().then(function(querySnapshot) {
         console.log(doc.id, " => ", doc.data());
     });
 });
+
+}, false);
+
 
 

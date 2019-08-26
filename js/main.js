@@ -17,7 +17,6 @@ const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
 const samtalsLangd = document.getElementById("samtals-langd");
-const = document.getElementById("bsidRaknare");
 
 var currentRow = 0;
 var bsid = 0;

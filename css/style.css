@@ -1,0 +1,35 @@
+.input-group {
+	padding: 25px 0 25px 0;
+}
+
+nav {
+	margin-bottom: 100px;
+}
+
+span {
+	margin-left: 10px;
+}
+
+#samtals-hjälp {
+	padding-left: 10px;
+}
+
+.statistik-group {
+	padding-top: 20px;
+	color: #333;
+	width: 100%;
+}
+
+
+table {
+	padding-top: 10px;
+}
+
+button {
+	right: 0;
+	padding-bottom: 20px;
+}
+
+.container {
+	margin-bottom: 50px;
+}

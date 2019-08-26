@@ -21,9 +21,9 @@ db.collection("samtal").get().then(function(querySnapshot) {
 	var cell_kategori = row.insertCell(0);
 	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
-	cell_kategori.innerHTML = doc.data;
-	cell_samtalslangd.innerHTML = doc.data;
-	cell_distraktion.innerHTML = doc.data;
+	cell_kategori.innerHTML = doc.data();
+	cell_samtalslangd.innerHTML = doc.data();
+	cell_distraktion.innerHTML = doc.data();
 	if (loadedRow % 2 == 0) {
 		tabell.rows[loadedRow].classList.add("table-primary");
 	} else {

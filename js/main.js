@@ -13,9 +13,15 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-db.collection("samtal").add({
-    		name: "Tokyo",
-    		country: "Japan"
+db.collection("cities").add({
+    name: "Tokyo",
+    country: "Japan"
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
 });
 
 const selectMenu = document.getElementById("select-category");

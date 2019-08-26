@@ -13,6 +13,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+db.collection("samtal").add({
+    		name: "Tokyo",
+    		country: "Japan"
+});
+
 const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
@@ -94,10 +99,6 @@ laggTillSamtal.addEventListener('click', function() {
 		}
 	}
 	createTableRow(selectMenu.options[selectMenu.selectedIndex].value);
-	db.collection("Samtal").add({
-    		name: "Tokyo",
-    		country: "Japan"
-	})
 });
 
 function createTableRow(kategori) {

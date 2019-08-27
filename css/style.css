@@ -37,3 +37,17 @@ button {
 .container {
 	margin-bottom: 50px;
 }
+
+@media only screen and (min-width: 768px) {
+  /* For mobile phones: */
+	* {
+		font-size: 35px;
+	}
+	.kategoriText {
+		font-size: 20px;
+		display: inline-block;
+	}
+	.badge {
+		font-size: 40px;
+	}
+}

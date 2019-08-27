@@ -133,9 +133,9 @@ function toggleRows(text) {
 
 	for (i = 0; i < kategorier.length; i++) {
 		if (clicked) {
-			deactivateBadge(räknareText[i]);
+			deactivateBadge(raknareText[i]);
 		} else {
-			activateBadge(räknareText[i]);
+			activateBadge(raknareText[i]);
 		}
 	}
 
@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function deactivateBadge(id) {
 	document.getElementById(id).style.opacity = .5;
-	if (document.getElementById(id).id == document.getElementById(räknareText[räknareText.length-1]).id) {
+	if (document.getElementById(id).id == document.getElementById(räknareText[raknareText.length-1]).id) {
 		clicked = false;
 	}
 }
 
 function activateBadge(id) {
 	document.getElementById(id).style.opacity = 1;
-	if (document.getElementById(id).id == document.getElementById(räknareText[räknareText.length-1]).id) {
+	if (document.getElementById(id).id == document.getElementById(räknareText[raknareText.length-1]).id) {
 		clicked = true;
 	}
 }

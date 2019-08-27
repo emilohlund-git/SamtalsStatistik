@@ -108,10 +108,11 @@ function createTableRow(kategori) {
 	var cell_kategori = row.insertCell(0);
 	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
+	var cell_tid = row.insertCell(3);
 	cell_kategori.innerHTML = kategori;
 	cell_samtalslangd.innerHTML = samtalsLangd.value + " min";
-	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value
-
+	cell_distraktion.innerHTML = document.getElementById("distraktion-text").value;
+	cell_tid.innerHTML = (new Date()).toISOString().slice(0,10).replace(/-/g,"");
 	if (currentRow % 2 == 0) {
 		tabell.rows[currentRow].classList.add("table-primary");
 	} else {
@@ -195,9 +196,11 @@ document.addEventListener('DOMContentLoaded', function(){
 	var cell_kategori = row.insertCell(0);
 	var cell_samtalslangd = row.insertCell(1);
 	var cell_distraktion = row.insertCell(2);
+	var cell_tid = row.insertCell(3);
 	cell_kategori.innerHTML = doc.data().kategori;
 	cell_samtalslangd.innerHTML = doc.data().samtalslängd;
 	cell_distraktion.innerHTML = doc.data().övrigt;
+	cell_tid.innerHTML = doc.data().tid;
 	if (currentRow % 2 == 0) {
 		tabell.rows[currentRow].classList.add("table-primary");
 	} else {

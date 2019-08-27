@@ -100,6 +100,8 @@ laggTillSamtal.addEventListener('click', function() {
 		}
 	}
 	createTableRow(selectMenu.options[selectMenu.selectedIndex].value);
+	document.getElementById("samtals-längd").getAttribute("value") = "";
+	document.getElementById("distraktion-text").getAttribute("value") = "";
 });
 
 function createTableRow(kategori) {

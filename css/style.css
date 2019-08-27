@@ -42,12 +42,16 @@ button {
   /* For mobile phones: */
 	* {
 		font-size: 35px;
-	}
-	.kategoriText {
-		font-size: 20px;
-		display: inline-block;
+		text-align: justify;
 	}
 	.badge {
 		font-size: 40px;
+	}
+	.kategoriText {
+		font-size: 30px;
+	}
+	#lägg-till-samtal {
+		float: right;
+		margin-bottom: 50px;
 	}
 }

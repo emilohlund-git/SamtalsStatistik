@@ -200,9 +200,9 @@ db.collection("samtal").get().then(function(querySnapshot) {
 	var cell_distraktion = row.insertCell(2);
 	var cell_tid = row.insertCell(3);
 	cell_kategori.innerHTML = doc.data().kategori;
-	cell_samtalslangd.innerHTML = doc.data().samtalslängd;
+	cell_samtalslangd.innerHTML = doc.data().samtalslängd + " min";
 	cell_distraktion.innerHTML = doc.data().övrigt;
-	cell_tid.innerHTML = doc.data().tid + " min";
+	cell_tid.innerHTML = doc.data().tid;
 	if (currentRow % 2 == 0) {
 		tabell.rows[currentRow].classList.add("table-primary");
 	} else {

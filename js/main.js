@@ -142,6 +142,15 @@ function toggleRows(text) {
   // Loop through all table rows, and hide those who don't match the search query
 	if (!clicked) {
   for (i = 0; i < tr.length; i++) {
+	  if (i > 0) {
+	tabell.rows[i].classList.remove("table-primary");
+	tabell.rows[i].classList.remove("table-default");
+	if (i % 2 == 0) {
+		tabell.rows[i].classList.add("table-primary");
+	} else {
+		tabell.rows[i].classList.add("table-default");
+	}
+	}
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;

@@ -20,6 +20,9 @@ span {
 	width: 100%;
 }
 
+.badge {
+	transition: all .2s ease-in-out;
+}
 
 table {
 	padding-top: 10px;

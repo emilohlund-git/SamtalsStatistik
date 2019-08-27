@@ -63,6 +63,10 @@ for (let i = 0; i < kategorier.length; i++) {
 	selectMenu.add(option);
 	
 	var kategoriText = document.createElement("p");
+	kategoriText.classList.add("kategoriText");
+	if (i % 2 == 1) {
+		kategoriText.classList.add("float-right");
+	}
 	kategoriText.id = "kategori" + i;
 	var text = document.createTextNode(kategorier[i]);
 	kategoriText.appendChild(text);
@@ -70,6 +74,9 @@ for (let i = 0; i < kategorier.length; i++) {
 
 	var kategoriBadge = document.createElement("span");
 	kategoriBadge.id = raknareText[i];
+	if (i % 2 == 0) {
+		kategoriBadge.classList.add("float-right");
+	}
 	var badgeText = document.createTextNode("0");
 	kategoriBadge.appendChild(badgeText);
 	kategoriText.appendChild(kategoriBadge);

@@ -182,8 +182,7 @@ function toggleRows(text) {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', function(){ 
-    db.collection("samtal").get().then(function(querySnapshot) {
+db.collection("samtal").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
 	currentRow++;
 	for(let i = 0; i < kategorier.length; i++) {
@@ -210,8 +209,6 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log(doc.id, " => ", doc.data());
     });
 });
-
-}, false);
 
 function deactivateBadge(id) {
 	document.getElementById(id).style.opacity = .5;

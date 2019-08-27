@@ -43,7 +43,7 @@ let raknare = [
 	ovfr,
 	btln,
 	ovrt,
-	shml,
+	bedr,
 	kort,
 ];
 

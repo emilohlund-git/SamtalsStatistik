@@ -39,7 +39,7 @@ const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
 const samtalsLangd = document.getElementById("samtals-langd");
 const bsidRaknare = document.getElementById("bsidRaknare");
-
+var clicked = false;
 var currentRow = 0;
 var bsid = 0;
 var mbid = 0;

@@ -24,7 +24,7 @@ var mbid = 0;
 var ovfr = 0;
 var btln = 0;
 var ovrt = 0;
-var shml = 0;
+var bedr = 0;
 var kort = 0;
 
 let kategorier = [
@@ -32,7 +32,7 @@ let kategorier = [
 	"Mobilt BankID",
 	"Overforing",
 	"Betalning",
-	"Sakerhetsmeddelande",
+	"Bedrägeri",
 	"Kort",
 	"Ovrigt",
 ];
@@ -53,7 +53,7 @@ let raknareText = [
 	"ovfr",
 	"btln",
 	"ovrt",
-	"shml",
+	"bedr",
 	"kort",
 ];
 

@@ -17,7 +17,7 @@ const selectMenu = document.getElementById("select-category");
 const tabell = document.getElementById("tabell");
 const laggTillSamtal = document.getElementById("lagg-till-samtal");
 const samtalsLangd = document.getElementById("samtals-langd");
-
+var clicked = false;
 var currentRow = 0;
 var bsid = 0;
 var mbid = 0;
@@ -81,6 +81,7 @@ for (let i = 0; i < kategorier.length; i++) {
 	document.getElementById(raknareText[i]).style.cursor = "pointer";
 	document.getElementById(raknareText[i]).addEventListener('click', function() {
 		toggleRows(kategorier[i]);	
+		this.style.opacity = 1;
 	});
 }
 
@@ -124,7 +125,43 @@ function createTableRow(kategori) {
 }
 
 function toggleRows(text) {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  
+  filter = text.toUpperCase();
+  tr = tabell.getElementsByTagName("tr");
 
+	for (i = 0; i < kategorier.length; i++) {
+		if (clicked) {
+			deactivateBadge(räknareText[i]);
+		} else {
+			activateBadge(räknareText[i]);
+		}
+	}
+
+  // Loop through all table rows, and hide those who don't match the search query
+	if (!clicked) {
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+	} else {
+	
+ for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+        tr[i].style.display = "";
+    }
+  }	
+
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -155,6 +192,21 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 }, false);
+
+function deactivateBadge(id) {
+	document.getElementById(id).style.opacity = .5;
+	if (document.getElementById(id).id == document.getElementById(räknareText[räknareText.length-1]).id) {
+		clicked = false;
+	}
+}
+
+function activateBadge(id) {
+	document.getElementById(id).style.opacity = 1;
+	if (document.getElementById(id).id == document.getElementById(räknareText[räknareText.length-1]).id) {
+		clicked = true;
+	}
+}
+
 
 
 
